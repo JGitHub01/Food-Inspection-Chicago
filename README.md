@@ -1,2 +1,2 @@
 # Food-Inspection-Chicago
-A simple web ui for search Chicago food inspection database
+A simple web ui for searching Chicago food inspection database
