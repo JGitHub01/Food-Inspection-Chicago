@@ -1,0 +1,15 @@
+.search-bar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+
+  &__text {
+    min-width: 100px;
+    max-width: 500px;
+    width: 50%;
+  }
+
+  &__button {
+    margin-left: 16px;
+  }
+}
