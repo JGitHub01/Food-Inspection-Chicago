@@ -1,14 +1,29 @@
-.search-app {
+body {
   display: flex;
   justify-content: center;
+}
+.search-app {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
   margin: 32px 16px;
+  max-width: 1200px;
+  width: 100%;
 
-  &-view {
+  &__sticky-header {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
     width: 100%;
-    max-width: 800px;
+    opacity: 1;
+    background-color: white;
+    padding-bottom: 16px;
+
+    .title {
+      align-self: center;
+    }
   }
 }

@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Should render the basic snapshot view 1`] = `
+<div>
+  <div
+    class="search-app__sticky-header"
+  >
+    <h2
+      class="title"
+    >
+      Chicago Food Inspection
+    </h2>
+    <div
+      class="search-bar"
+      data-testid="search-bar"
+    >
+      <div
+        class="MuiFormControl-root MuiTextField-root search-bar__text"
+      >
+        <label
+          class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+          data-shrink="false"
+        >
+          Type a keyword
+        </label>
+        <div
+          class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-formControl"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiFilledInput-input"
+            data-testid="search-field"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="search-bar__button"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+          data-testid="search-button"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Search
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="search-results"
+    data-testid="search-results"
+  >
+    <div
+      class="search-results__not-found"
+    >
+      Please enter a keyword
+    </div>
+  </div>
+</div>
+`;

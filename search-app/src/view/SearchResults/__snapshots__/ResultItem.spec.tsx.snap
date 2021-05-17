@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultItem should render the basic snapshot view 1`] = `
+<div
+  class="result-item"
+  data-testid="result-item"
+>
+  <div
+    class="result-item__row result-item__date-row"
+  >
+    <span>
+      May 13th, 2021
+    </span>
+    <span
+      class="business-name"
+    >
+      SCHUBA'S TAVERN/TIED HOUSE
+    </span>
+  </div>
+  <div
+    class="result-item__row"
+  >
+    3153-3159 N SOUTHPORT AVE 
+  </div>
+  <div
+    class="result-item__row"
+  >
+    Risk 1 (High)
+  </div>
+</div>
+`;

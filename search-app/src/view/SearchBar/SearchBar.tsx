@@ -21,14 +21,16 @@ export default function SearchBar(props: ISearchBarProps) {
         onSearch && onSearch(keyword);
       }
     }
-    buttonRef.current?.addEventListener('click', onButtonClick);
-    inputRef.current?.addEventListener('keypress', onKeypress);
+    const buttonDom = buttonRef.current;
+    const inputDom = inputRef.current;
+    buttonDom?.addEventListener('click', onButtonClick);
+    inputDom?.addEventListener('keypress', onKeypress);
 
     return (() => {
-      buttonRef.current?.removeEventListener('click', onButtonClick);
-      inputRef.current?.removeEventListener('keypress', onKeypress);
+      buttonDom?.removeEventListener('click', onButtonClick);
+      inputDom?.removeEventListener('keypress', onKeypress);
     });
-  }, [keyword]);
+  }, [keyword, onSearch]);
 
   return (
     <div className='search-bar' data-testid='search-bar'>
