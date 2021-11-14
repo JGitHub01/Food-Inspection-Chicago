@@ -10,27 +10,6 @@ interface ISearchBarProps {
 
 export default function SearchBar(props: ISearchBarProps) {
   const { keyword = "", onKeywordChange, onSearch } = props;
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
-  useEffect(() => {
-    const onButtonClick = () => {
-      onSearch && onSearch(keyword);
-    };
-    const onKeypress = (e: KeyboardEvent) => {
-      if (e.key === 'Enter') {
-        onSearch && onSearch(keyword);
-      }
-    }
-    const buttonDom = buttonRef.current;
-    const inputDom = inputRef.current;
-    buttonDom?.addEventListener('click', onButtonClick);
-    inputDom?.addEventListener('keypress', onKeypress);
-
-    return (() => {
-      buttonDom?.removeEventListener('click', onButtonClick);
-      inputDom?.removeEventListener('keypress', onKeypress);
-    });
-  }, [keyword, onSearch]);
 
   return (
     <div className='search-bar' data-testid='search-bar'>
@@ -38,10 +17,14 @@ export default function SearchBar(props: ISearchBarProps) {
         className='search-bar__text'
         label='Type a keyword'
         variant='filled'
-        inputRef={inputRef}
-        inputProps={{'data-testid': 'search-field'}}
+        inputProps={{ 'data-testid': 'search-field' }}
         onChange={(e) => {
-          onKeywordChange && onKeywordChange(e.target.value);
+          return onKeywordChange && onKeywordChange(e.target.value);
+        }}
+        onKeyPress={(e) => {
+          if (e.key === 'Enter') {
+            return onSearch && onSearch(keyword);
+          }
         }}
       >
         {keyword}
@@ -50,7 +33,9 @@ export default function SearchBar(props: ISearchBarProps) {
         <Button
           variant='contained'
           color='primary'
-          ref={buttonRef}
+          onClick={() => {
+            return onSearch && onSearch(keyword);
+          }}
           data-testid='search-button'
         >
           Search

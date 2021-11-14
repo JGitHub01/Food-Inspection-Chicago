@@ -7,7 +7,7 @@ import './styles/app.scss';
 
 function App() {
   const [keyword, setKeyword] = useState<string>("");
-  const [results, doSearch] = useSearch();
+  const {results, doSearch} = useSearch();
   return (
     <>
       <div className='search-app__sticky-header'>
@@ -23,13 +23,13 @@ function App() {
   );
 }
 
-const useSearch = (): [ISearchResults, (keyword: string) => void] => {
+const useSearch = (): {results: ISearchResults, doSearch: (keyword: string) => void} => {
   const [results, setResults] = useState<ISearchResults>({ items: [] });
   const doSearch = async (keyword: string) => {
     const results = await search(keyword);
     setResults(results);
   }
 
-  return [results, doSearch];
+  return {results, doSearch};
 }
 export default App;

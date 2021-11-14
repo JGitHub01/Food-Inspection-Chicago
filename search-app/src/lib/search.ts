@@ -27,7 +27,7 @@ export default async function search(keyword: string): Promise<ISearchResults> {
         msg: response.statusText
       }
     }
-  } catch (error) {
+  } catch (error: any) {
     return {
       items: [],
       success: false,
